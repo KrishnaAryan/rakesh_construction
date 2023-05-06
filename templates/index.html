@@ -56,6 +56,7 @@
            </div>
     </div>
 </div>
+<br>
 <!-- Slider End -->
 
 <!-- Contact Start -->
@@ -67,50 +68,57 @@
                     Request A Services
                 </h2>
             </div>
-            <div class="row">
-
-                <div class="col-lg-4 col-sm-6 mb-30">
-                    <span class="wpcf7-form-control-wrap">
-                        <input type="text" id="name" name="name" placeholder=" Name" required="">
-                    </span>
-                </div>
-                <div class="col-lg-4 col-sm-6 mb-30">
-                    <span class="wpcf7-form-control-wrap arrow2">
-                        <input type="text" id="phone-number" name="phone-number" placeholder="Phone Number" required="">
-                    </span>
-                </div>
-                <div class="col-lg-4 col-sm-6 mb-30">
-                    <span class="wpcf7-form-control-wrap">
-                        <input type="text" id="email" name="email" placeholder="Email" required="">
-                    </span>
-                </div>
-                <div class="col-lg-4 col-sm-6 md-mb-30">
-                    <span class="wpcf7-form-control-wrap arrow3">
-                        <input type="text" id="your-address" name="your-address" placeholder="Your Address" required="">
-                    </span>
-                </div>
-                <div class="col-lg-4 col-sm-6 sm-mb-30">
-                    <span class="wpcf7-form-control-wrap arrow4 Services services_select">
-                        <select name="Services select" id="default_hide">
-                            <option>Services</option>
-                            <option>General construction</option>
-                            <option>Modified Roofing</option>
-                            <option>Metal Roofing</option>
-                            <option>Vegetative Roofing</option>
-                            <option>Inspections</option>
-                            <option>Siding & Gutters</option>
-                        </select>
-                    
-                    </span>
-                </div>
-                <div class="col-lg-4 col-sm-6">
-                    <div class="services-btn">
-                        <p class="submit-btn">
-                            <input type="submit" value="Submit Services Request" class="Submit Services Request">
-                        </p>
+            <form method="post">
+                {% csrf_token %}
+                <div class="row">
+                  <div class="col-lg-4 col-sm-6 mb-30">
+                    <div class="form-group">
+                      <label for="name">Name:</label>
+                      <input type="text" class="form-control" id="name" name="name" placeholder="Name" required="">
                     </div>
+                  </div>
+                  <div class="col-lg-4 col-sm-6 mb-30">
+                    <div class="form-group">
+                      <label for="phone_number">Phone Number:</label>
+                      <input type="tel" class="form-control" id="phone_number" name="phone_number" placeholder="Phone Number" required="">
+                    </div>
+                  </div>
+                  <div class="col-lg-4 col-sm-6 mb-30">
+                    <div class="form-group">
+                      <label for="email">Email:</label>
+                      <input type="email" class="form-control" id="email" name="email" placeholder="Email" required="">
+                    </div>
+                  </div>
+                  <div class="col-lg-4 col-sm-6 md-mb-30">
+                    <div class="form-group">
+                      <label for="address">Address:</label>
+                      <input type="text" class="form-control" id="address" name="address" placeholder="Address" required="">
+                    </div>
+                  </div>
+                  <div class="col-lg-4 col-sm-6 sm-mb-30">
+                    <div class="form-group">
+                      <label for="service">Service:</label>
+                      <select class="form-control" id="service" name="service">
+                        <option value="" selected disabled>Services</option>
+                        <option value="General construction">General construction</option>
+                        <option value="Modified Roofing">Modified Roofing</option>
+                        <option value="Metal Roofing">Metal Roofing</option>
+                        <option value="Vegetative Roofing">Vegetative Roofing</option>
+                        <option value="Inspections">Inspections</option>
+                        <option value="Siding & Gutters">Siding & Gutters</option>
+                      </select>
+                    </div>
+                  </div>
+                  <div class="col-lg-4 col-sm-6">
+                    <div class="services-btn">
+                      <p class="submit-btn">
+                        <button type="submit" class="btn btn-primary">Submit Services Request</button>
+                      </p>
+                    </div>
+                  </div>
                 </div>
-            </div>
+              </form>
+            
         </div>
     </div>
 </div>
@@ -206,9 +214,9 @@
                     </div>
                     <div class="services-text">
                         <div class="services-inner">
-                            <h3 class="title"><a href="general-construction">General construction</a></h3>
+                            <h3 class="title"><a href="general_construction">General construction</a></h3>
                             <div class="services-btn">
-                                <a class="red-btn-text" href="general-construction.html"><i class="fa flaticon-right-arrow"></i></a>
+                                <a class="red-btn-text" href="general_construction"><i class="fa flaticon-right-arrow"></i></a>
                             </div>
                         </div>
                     </div>
@@ -223,7 +231,7 @@
                         <div class="services-inner">
                             <h3 class="title"><a href="services-style1">Modified Roofing</a></h3>
                             <div class="services-btn">
-                                <a class="red-btn-text" href="services-style1.html"><i class="fa flaticon-right-arrow"></i></a>
+                                <a class="red-btn-text" href="services"><i class="fa flaticon-right-arrow"></i></a>
                             </div>
                         </div>
                     </div>
@@ -238,7 +246,7 @@
                         <div class="services-inner">
                             <h3 class="title"><a href="services">Metal Roofing</a></h3>
                             <div class="services-btn">
-                                <a class="red-btn-text" href="services-style1.html"><i class="fa flaticon-right-arrow"></i></a>
+                                <a class="red-btn-text" href="services"><i class="fa flaticon-right-arrow"></i></a>
                             </div>
                         </div>
                     </div>
@@ -253,7 +261,7 @@
                         <div class="services-inner">
                             <h3 class="title"><a href="services">Vegetative Roofing</a></h3>
                             <div class="services-btn">
-                                <a class="red-btn-text" href="services-style1.html"><i class="fa flaticon-right-arrow"></i></a>
+                                <a class="red-btn-text" href="services"><i class="fa flaticon-right-arrow"></i></a>
                             </div>
                         </div>
                     </div>
@@ -268,7 +276,7 @@
                         <div class="services-inner">
                             <h3 class="title"><a href="services">Inspections</a></h3>
                             <div class="services-btn">
-                                <a class="red-btn-text" href="services-style1.html"><i class="fa flaticon-right-arrow"></i></a>
+                                <a class="red-btn-text" href="services"><i class="fa flaticon-right-arrow"></i></a>
                             </div>
                         </div>
                     </div>
@@ -283,7 +291,7 @@
                         <div class="services-inner">
                             <h3 class="title"><a href="services">Siding & Gutters</a></h3>
                             <div class="services-btn">
-                                <a class="red-btn-text" href="services-style1.html"><i class="fa flaticon-right-arrow"></i></a>
+                                <a class="red-btn-text" href="services"><i class="fa flaticon-right-arrow"></i></a>
                             </div>
                         </div>
                     </div>
@@ -307,58 +315,25 @@
             </h2>
         </div>
         <div class="row">
+            {% for i in projects %}
             <div class="col-lg-6 col-md-6 md-mb-30">
                 <div class="project-item mb-30">
+                    
                     <div class="project-img">
-                        <img src="{% static 'assets/images/project/style2/port-1.jpg' %}" alt="images">
+                        <img src="{{ i.feature_image.url }}" alt="images">
                     </div>
                     <div class="project-content">                                
-                        <div class="p-icon"><a href="projects-single.html"><i class="fi fi-rr-arrow-small-right"></i></a></div>
+                        <div class="p-icon"><a href="{% url 'projects_single' pk=i.pk %}"><i class="fi fi-rr-arrow-small-right"></i></a></div>
                         <div class="project-inner">
-                            <h3 class="title"><a href="projects-single.html">Jewelers Mutual</a></h3>
-                            <span class="category"><a href="projects-single.html">Masonry</a></span>
+                            <h3 class="title"><a href="{% url 'projects_single' pk=i.pk %}">{{i.project_name}}</a></h3>
+                            <span class="category"><a href="{% url 'projects_single' pk=i.pk %}">{{i.location}}</a></span>
                         </div>
                     </div>
+                    
                 </div>
-                <div class="project-item">
-                    <div class="project-img">
-                        <img src="{% static 'assets/images/project/style2/port-3.jpg' %}" alt="images">
-                    </div>
-                    <div class="project-content">                                
-                        <div class="p-icon"><a href="projects-single.html"><i class="fi fi-rr-arrow-small-right"></i></a></div>
-                        <div class="project-inner">
-                            <h3 class="title"><a href="projects-single.html">Historic Restoration</a></h3>
-                            <span class="category"><a href="projects-single.html">Masonry</a></span>
-                        </div>
-                    </div>
-                </div>
+                
             </div>
-            <div class="col-lg-6 col-md-6">
-                <div class="project-item mb-30">
-                    <div class="project-img">
-                        <img src="{% static 'assets/images/project/style2/port-2.jpg' %}" alt="images">
-                    </div>
-                    <div class="project-content">                                
-                        <div class="p-icon"><a href="projects-single.html"><i class="fi fi-rr-arrow-small-right"></i></a></div>
-                        <div class="project-inner">
-                            <h3 class="title"><a href="projects-single.html">Edison Middle School</a></h3>
-                            <span class="category"><a href="projects-single.html">Masonry</a></span>
-                        </div>
-                    </div>
-                </div>
-                <div class="project-item">
-                    <div class="project-img">
-                        <img src="{% static 'assets/images/project/style2/port-4.jpg' %}" alt="images">
-                    </div>
-                    <div class="project-content">                                
-                        <div class="p-icon"><a href="projects-single.html"><i class="fi fi-rr-arrow-small-right"></i></a></div>
-                        <div class="project-inner">
-                            <h3 class="title"><a href="projects-single.html">Olson’s Piggly Wiggly</a></h3>
-                            <span class="category"><a href="projects-single.html">Masonry</a></span>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            {% endfor %}
         </div>
     </div>
 </div>
@@ -638,12 +613,12 @@
             <div class="team-item-wrap">
                 <div class="team-inner-wrap">
                     <div class="image-wrap">
-                        <a href="team-single.html"><img src="{% static 'assets/images/team/tm1.jpg' %}" alt="Team"></a>
+                        <a href="team_single"><img src="{% static 'assets/images/team/tm1.jpg' %}" alt="Team"></a>
                     </div>
                     <div class="team-content">
                         <div class="team-info">
                             <h3 class="team-name">
-                                <a href="team-single.html">Xavier Davids</a>
+                                <a href="team_single">Xavier Davids</a>
                             </h3>
                             <span class="team-title">Builder Advisor</span>
                         </div>
@@ -662,12 +637,12 @@
             <div class="team-item-wrap">
                 <div class="team-inner-wrap">
                     <div class="image-wrap">
-                        <a href="team-single.html"><img src="{% static 'assets/images/team/tm2.jpg' %}" alt="Team"></a>
+                        <a href="team_single"><img src="{% static 'assets/images/team/tm2.jpg' %}" alt="Team"></a>
                     </div>
                     <div class="team-content">
                         <div class="team-info">
                             <h3 class="team-name">
-                                <a href="team-single.html">Davis Youn</a>
+                                <a href="team_single">Davis Youn</a>
                             </h3>
                             <span class="team-title">Architecture</span>
                         </div>
@@ -686,12 +661,12 @@
             <div class="team-item-wrap">
                 <div class="team-inner-wrap">
                     <div class="image-wrap">
-                        <a href="team-single.html"><img src="{% static 'assets/images/team/tm3.jpg' %}" alt="Team"></a>
+                        <a href="team_single"><img src="{% static 'assets/images/team/tm3.jpg' %}" alt="Team"></a>
                     </div>
                     <div class="team-content">
                         <div class="team-info">
                             <h3 class="team-name">
-                                <a href="team-single.html">Thomas Arthur</a>
+                                <a href="team_single">Thomas Arthur</a>
                             </h3>
                             <span class="team-title">Foreman</span>
                         </div>
@@ -710,12 +685,12 @@
             <div class="team-item-wrap">
                 <div class="team-inner-wrap">
                     <div class="image-wrap">
-                        <a href="team-single.html"><img src="{% static 'assets/images/team/tm4.jpg' %}" alt="Team"></a>
+                        <a href="team_single"><img src="{% static 'assets/images/team/tm4.jpg' %}" alt="Team"></a>
                     </div>
                     <div class="team-content">
                         <div class="team-info">
                             <h3 class="team-name">
-                                <a href="team-single.html">Leo Harnent Keorn</a>
+                                <a href="team_single">Leo Harnent Keorn</a>
                             </h3>
                             <span class="team-title">Construction Worker</span>
                         </div>
@@ -734,12 +709,12 @@
             <div class="team-item-wrap">
                 <div class="team-inner-wrap">
                     <div class="image-wrap">
-                        <a href="team-single.html"><img src="{% static 'assets/images/team/tm5.jpg' %}" alt="Team"></a>
+                        <a href="team_single"><img src="{% static 'assets/images/team/tm5.jpg' %}" alt="Team"></a>
                     </div>
                     <div class="team-content">
                         <div class="team-info">
                             <h3 class="team-name">
-                                <a href="team-single.html">John William</a>
+                                <a href="team_single">John William</a>
                             </h3>
                             <span class="team-title">CEO & Engineer</span>
                         </div>
@@ -758,12 +733,12 @@
             <div class="team-item-wrap">
                 <div class="team-inner-wrap">
                     <div class="image-wrap">
-                        <a href="team-single.html"><img src="{% static 'assets/images/team/tm6.jpg' %}" alt="Team"></a>
+                        <a href="team_single"><img src="{% static 'assets/images/team/tm6.jpg' %}" alt="Team"></a>
                     </div>
                     <div class="team-content">
                         <div class="team-info">
                             <h3 class="team-name">
-                                <a href="team-single.html">Navin Thapa</a>
+                                <a href="team_single">Navin Thapa</a>
                             </h3>
                             <span class="team-title">Project Manager</span>
                         </div>
@@ -782,12 +757,12 @@
             <div class="team-item-wrap">
                 <div class="team-inner-wrap">
                     <div class="image-wrap">
-                        <a href="team-single.html"><img src="{% static 'assets/images/team/tm1.jpg' %}" alt="Team"></a>
+                        <a href="team_single"><img src="{% static 'assets/images/team/tm1.jpg' %}" alt="Team"></a>
                     </div>
                     <div class="team-content">
                         <div class="team-info">
                             <h3 class="team-name">
-                                <a href="team-single.html">Xavier Davids</a>
+                                <a href="team_single">Xavier Davids</a>
                             </h3>
                             <span class="team-title">Builder Advisor</span>
                         </div>
@@ -806,12 +781,12 @@
             <div class="team-item-wrap">
                 <div class="team-inner-wrap">
                     <div class="image-wrap">
-                        <a href="team-single.html"><img src="{% static 'assets/images/team/tm2.jpg' %}" alt="Team"></a>
+                        <a href="team_single"><img src="{% static 'assets/images/team/tm2.jpg' %}" alt="Team"></a>
                     </div>
                     <div class="team-content">
                         <div class="team-info">
                             <h3 class="team-name">
-                                <a href="team-single.html">Davis Youn</a>
+                                <a href="team_single">Davis Youn</a>
                             </h3>
                             <span class="team-title">Architecture</span>
                         </div>
@@ -830,12 +805,12 @@
             <div class="team-item-wrap">
                 <div class="team-inner-wrap">
                     <div class="image-wrap">
-                        <a href="team-single.html"><img src="{% static 'assets/images/team/tm3.jpg' %}" alt="Team"></a>
+                        <a href="team_single"><img src="{% static 'assets/images/team/tm3.jpg' %}" alt="Team"></a>
                     </div>
                     <div class="team-content">
                         <div class="team-info">
                             <h3 class="team-name">
-                                <a href="team-single.html">Thomas Arthur</a>
+                                <a href="team_single">Thomas Arthur</a>
                             </h3>
                             <span class="team-title">Foreman</span>
                         </div>
@@ -872,80 +847,80 @@
         <div class="rs-carousel owl-carousel" data-loop="true" data-items="3" data-margin="30" data-autoplay="true" data-hoverpause="true" data-autoplay-timeout="5000" data-smart-speed="800" data-dots="false" data-nav="false" data-nav-speed="false" data-center-mode="false" data-mobile-device="1" data-mobile-device-nav="false" data-mobile-device-dots="false" data-ipad-device="2" data-ipad-device-nav="false" data-ipad-device-dots="false" data-ipad-device2="2" data-ipad-device-nav2="false" data-ipad-device-dots2="false" data-md-device="3" data-md-device-nav="false" data-md-device-dots="false">
             <div class="blog-item">
                 <div class="image-wrap">
-                    <a href="blog-single.html"><img src="{% static 'assets/images/blog/style1/1.jpg' %}" alt=""></a>
+                    <a href="blog_single"><img src="{% static 'assets/images/blog/style1/1.jpg' %}" alt=""></a>
                 </div>
                 <div class="blog-content">
-                    <h3 class="blog-title"><a href="blog-single.html">We really appreciate content about the construction</a></h3>
+                    <h3 class="blog-title"><a href="blog_single">We really appreciate content about the construction</a></h3>
                     <ul class="blog-meta">
                         <li class="date"><i class="fa fa-calendar-check-o"></i>26 April 2022</li>
                            <li class="admin"><i class="fa fa-user-o"></i>Admin</li>
                        </ul>
-                    <div class="blog-button blog-btn3"><a href="blog-single.html">Read More</a></div>
+                    <div class="blog-button blog-btn3"><a href="blog_single">Read More</a></div>
                 </div>
             </div>
             <div class="blog-item">
                 <div class="image-wrap">
-                    <a href="blog-single.html"><img src="{% static 'assets/images/blog/style1/2.jpg' %}" alt=""></a>
+                    <a href="blog_single"><img src="{% static 'assets/images/blog/style1/2.jpg' %}" alt=""></a>
                 </div>
                 <div class="blog-content">
-                    <h3 class="blog-title"><a href="blog-single.html">Best practices construction law on construction</a></h3>
+                    <h3 class="blog-title"><a href="blog_single">Best practices construction law on construction</a></h3>
                     <ul class="blog-meta">
                         <li class="date"><i class="fa fa-calendar-check-o"></i>26 April 2022</li>
                            <li class="admin"><i class="fa fa-user-o"></i>Admin</li>
                        </ul>
-                    <div class="blog-button blog-btn3"><a href="blog-single.html">Read More</a></div>
+                    <div class="blog-button blog-btn3"><a href="blog_single">Read More</a></div>
                 </div>
             </div>
             <div class="blog-item">
                 <div class="image-wrap">
-                    <a href="blog-single.html"><img src="{% static 'assets/images/blog/style1/3.jpg' %}" alt=""></a>
+                    <a href="blog_single"><img src="{% static 'assets/images/blog/style1/3.jpg' %}" alt=""></a>
                 </div>
                 <div class="blog-content">
-                    <h3 class="blog-title"><a href="blog-single.html">Although many people may overlook the need</a></h3>
+                    <h3 class="blog-title"><a href="blog_single">Although many people may overlook the need</a></h3>
                     <ul class="blog-meta">
                         <li class="date"><i class="fa fa-calendar-check-o"></i>26 April 2022</li>
                            <li class="admin"><i class="fa fa-user-o"></i>Admin</li>
                        </ul>
-                    <div class="blog-button blog-btn3"><a href="blog-single.html">Read More</a></div>
+                    <div class="blog-button blog-btn3"><a href="blog_single">Read More</a></div>
                 </div>
             </div>
             <div class="blog-item">
                 <div class="image-wrap">
-                    <a href="blog-single.html"><img src="{% static 'assets/images/blog/style1/4.jpg' %}" alt=""></a>
+                    <a href="blog_single"><img src="{% static 'assets/images/blog/style1/4.jpg' %}" alt=""></a>
                 </div>
                 <div class="blog-content">
-                    <h3 class="blog-title"><a href="blog-single.html">Construction executive holds a very special place</a></h3>
+                    <h3 class="blog-title"><a href="blog_single">Construction executive holds a very special place</a></h3>
                     <ul class="blog-meta">
                         <li class="date"><i class="fa fa-calendar-check-o"></i>26 April 2022</li>
                            <li class="admin"><i class="fa fa-user-o"></i>Admin</li>
                        </ul>
-                    <div class="blog-button blog-btn3"><a href="blog-single.html">Read More</a></div>
+                    <div class="blog-button blog-btn3"><a href="blog_single">Read More</a></div>
                 </div>
             </div>
             <div class="blog-item">
                 <div class="image-wrap">
-                    <a href="blog-single.html"><img src="{% static 'assets/images/blog/style1/5.jpg' %}" alt=""></a>
+                    <a href="blog_single"><img src="{% static 'assets/images/blog/style1/5.jpg' %}" alt=""></a>
                 </div>
                 <div class="blog-content">
-                    <h3 class="blog-title"><a href="blog-single.html">This is another massive sites with a ton of information</a></h3>
+                    <h3 class="blog-title"><a href="blog_single">This is another massive sites with a ton of information</a></h3>
                     <ul class="blog-meta">
                         <li class="date"><i class="fa fa-calendar-check-o"></i>26 April 2022</li>
                            <li class="admin"><i class="fa fa-user-o"></i>Admin</li>
                        </ul>
-                    <div class="blog-button blog-btn3"><a href="blog-single.html">Read More</a></div>
+                    <div class="blog-button blog-btn3"><a href="blog_single">Read More</a></div>
                 </div>
             </div>
             <div class="blog-item">
                 <div class="image-wrap">
-                    <a href="blog-single.html"><img src="{% static 'assets/images/blog/style1/6.jpg' %}" alt=""></a>
+                    <a href="blog_single"><img src="{% static 'assets/images/blog/style1/6.jpg' %}" alt=""></a>
                 </div>
                 <div class="blog-content">
-                    <h3 class="blog-title"><a href="blog-single.html">The construction business the owner site is jam-packed</a></h3>
+                    <h3 class="blog-title"><a href="blog_single">The construction business the owner site is jam-packed</a></h3>
                     <ul class="blog-meta">
                         <li class="date"><i class="fa fa-calendar-check-o"></i>26 April 2022</li>
                            <li class="admin"><i class="fa fa-user-o"></i>Admin</li>
                        </ul>
-                    <div class="blog-button blog-btn3"><a href="blog-single.html">Read More</a></div>
+                    <div class="blog-button blog-btn3"><a href="blog_single">Read More</a></div>
                 </div>
             </div>
         </div>

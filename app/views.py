@@ -1,9 +1,31 @@
 from django.shortcuts import render
-
+from django.shortcuts import render, redirect
+from .forms import CustomerForm
+from .models import *
 # Create your views here.
 
 def index(request):
-    return render(request, 'index.html')
+    
+    #form
+    if request.method == 'POST':
+        form = CustomerForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect('success_page') # redirect to a success page
+    else:
+        form = CustomerForm()
+    
+    #  View our latest projects.
+    projects=LatestProject.objects.all()   
+    context={
+        'form': form,
+        'projects':projects,
+    }
+    
+    return render(request, 'index.html', context)
+
+def success_page(request):
+    return render(request, 'success_page.html')
 
 def about(request):
     return render(request, 'about.html')
@@ -37,5 +59,20 @@ def preconstruction(request):
 
 def design_build(request):
     return render(request, 'design-build.html')
+
+
+
+def blog_single(request):
+    return render(request, 'blog-single.html')
+
+def projects_single(request, pk):
+    poject_view=LatestProject.objects.get(pk=pk)
+    context={
+        'poject_view':poject_view
+    }
+    return render(request, 'projects-single.html', context)
+
+def team_single(request):
+    return render(request, 'team-single.html')
 
 
